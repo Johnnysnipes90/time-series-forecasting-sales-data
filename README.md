@@ -1,9 +1,10 @@
 # Walmart Store Sales Forecasting
 
-This repository contains a time series forecasting project on Walmart store sales data, using machine learning techniques to predict demand and account for seasonal events. The objective is to accurately model sales trends, identify anomalies, and build regression models to understand how various factors affect sales across multiple Walmart stores in the U.S.
+This repository contains a time series forecasting project on Walmart store sales data. We aim to predict demand, account for seasonal events, and evaluate machine learning models to improve forecast accuracy for Walmart sales across 45 stores in the U.S.
 
 ## Table of Contents
 - [About the Dataset](#about-the-dataset)
+- [Data Dictionary](#data-dictionary)
 - [Project Objectives](#project-objectives)
 - [Project Structure](#project-structure)
 - [Installation](#installation)
@@ -14,23 +15,41 @@ This repository contains a time series forecasting project on Walmart store sale
 ---
 
 ## About the Dataset
-This dataset, sourced from world.data, provides historical sales information for 45 Walmart stores in different regions. The data includes weekly sales figures, promotional markdown events, and economic indicators (CPI, Unemployment Index). The data also captures sales influences due to major U.S. holidays, like the Super Bowl, Labour Day, Thanksgiving, and Christmas. These holiday weeks are given extra weighting due to their impact on sales patterns.
+The Walmart sales dataset provides historical data for 45 Walmart stores located in different regions, with information on weekly sales, holiday indicators, promotional markdowns, and economic conditions like the Consumer Price Index (CPI) and Unemployment Index. Major U.S. holidays, such as the Super Bowl, Labour Day, Thanksgiving, and Christmas, are given special weighting due to their impact on consumer demand.
 
-**Key Features**:
-- **Sales**: Weekly sales figures for each store.
-- **Holiday Events**: Sales during major holidays with increased evaluation weighting.
-- **Economic Indicators**: Factors like CPI and Unemployment Index that may affect sales.
-- **Promotional Events**: Walmart markdowns scheduled around holidays.
+The dataset aims to capture factors that drive sales variations across different departments, store locations, and holiday periods, providing a robust base for sales forecasting and regression modeling.
+
+**Source**: The dataset is sourced from world.data.
+
+## Data Dictionary
+Here's a brief description of each column in the dataset:
+
+| Column         | Description                                                                 |
+|----------------|-----------------------------------------------------------------------------|
+| `Unnamed: 0`   | Row index (may be removed in preprocessing).                               |
+| `Store`        | Store ID (unique identifier for each store).                               |
+| `Date`         | The date for the weekly sales data.                                        |
+| `IsHoliday`    | Indicator (1 = holiday week, 0 = non-holiday week).                        |
+| `Dept`         | Department ID (unique identifier for each department within the store).    |
+| `Weekly_Sales` | Sales revenue for the given week in the respective department.             |
+| `Temperature`  | Average temperature for the week at the store's location.                  |
+| `Fuel_Price`   | Fuel price at the store's location (may influence purchasing patterns).    |
+| `MarkDown1-5`  | Data on promotional markdowns preceding major holidays (when available).   |
+| `CPI`          | Consumer Price Index (economic indicator, affects purchasing power).       |
+| `Unemployment` | Unemployment rate at the store's location (affects local spending habits). |
+| `Type`         | Store type classification (categorical).                                   |
+| `Size`         | Store size in square feet.                                                 |
 
 ## Project Objectives
 1. **Data Exploration**: Analyze and understand the structure and characteristics of the dataset.
-2. **Time Series Forecasting**: Develop time series models to predict sales over time and assess trends.
-3. **Anomaly Detection**: Identify irregular patterns or anomalies in sales data.
-4. **Regression Analysis**: Build regression models to predict sales based on features such as economic indicators and promotions.
-5. **Model Evaluation**: Evaluate models using metrics such as R², RMSE, and others to understand prediction accuracy and model performance.
+2. **Time Series Forecasting**: Develop time series models to predict weekly sales.
+3. **Anomaly Detection**: Identify unusual sales patterns, particularly around holidays and markdown events.
+4. **Regression Analysis**: Build regression models to predict sales based on economic indicators and store-specific data.
+5. **Model Evaluation**: Compare model performance with metrics like R², RMSE, etc.
 
 ## Project Structure
 The repository is organized as follows:
+
 
 
 ## Installation
